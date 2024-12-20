@@ -8,6 +8,16 @@ import Layout from './Components/Layout';
 import LoginSignup from './Pages/LoginSignup';
 import AdminDashboard from './Pages/Dashbord/AdminDashboard';
 import OrganizerDashboard from './Pages/Dashbord/OrganizerDashboard'; 
+import UserProfile from './Pages/Dashbord/Userprofile';
+import EducationalEventPage from './Pages/Dashbord/EducationalEventPage';
+import SportsEvents from './Pages/Dashbord/SportsEvents';
+import PoliticalEventsPage from './Pages/Dashbord/PoliticalEvents';
+import UserLandingPage from './Pages/Dashbord/UserLandingPage';
+
+
+
+
+
 
 const App = () => {
   return (
@@ -22,6 +32,12 @@ const App = () => {
           <Route path="/loginsignup" element={<LoginSignup />} />
           <Route path="/admindb" element={<AdminDashboard />} />
           <Route path="/orgdb" element={<OrganizerDashboard />} />
+          <Route path="/Userprofile" element={<UserProfile/>}/>
+          <Route path="/EducationalEventPage" element={<EducationalEventPage />} />
+          <Route path="/SportsEvents" element={<SportsEvents />} />
+          <Route path="/PoliticalEventsPage" element={<PoliticalEventsPage />} />
+          <Route path="/UserLandingpage" element={<UserLandingPage />} />
+          
         </Routes>
       </Layout>
     </Router>

@@ -1,9 +1,16 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const LoginSignup = () => {
   const [activeTab, setActiveTab] = useState("login");
   const [role, setRole] = useState("User"); // Role state
+
+  const navigate = useNavigate();
+  const location = useLocation();
+  
+  // Get the redirect path from query parameters
+  const redirectPath = new URLSearchParams(location.search).get("redirect") || "/";
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
@@ -17,6 +24,12 @@ const LoginSignup = () => {
 
   const onSubmit = (data) => {
     console.log(data); // Logs the form data
+    
+    // Simulate successful login/signup
+    setTimeout(() => {
+      // After successful login/signup, navigate to the intended path
+      navigate(redirectPath);
+    }, 500);
   };
 
   return (
@@ -106,12 +119,18 @@ const LoginSignup = () => {
                   id="fullname"
                   type="text"
                   className="input input-bordered w-full"
-                  placeholder={role === "User" ? "Enter your full name" : "Enter your organization name"}
+                  placeholder={
+                    role === "User"
+                      ? "Enter your full name"
+                      : "Enter your organization name"
+                  }
                   {...register("fullname", { required: true })}
                 />
                 {errors.fullname && (
                   <p className="text-red-500 text-sm">
-                    {role === "User" ? "Full Name is required" : "Organizer Name is required"}
+                    {role === "User"
+                      ? "Full Name is required"
+                      : "Organizer Name is required"}
                   </p>
                 )}
               </div>

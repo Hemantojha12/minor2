@@ -48,7 +48,8 @@ const NavBar = () => {
 
   if (
     location.pathname.startsWith("/admindb") ||
-    location.pathname.startsWith("/orgdb")
+    location.pathname.startsWith("/orgdb")   
+  
   ) {
     return null;
   }
