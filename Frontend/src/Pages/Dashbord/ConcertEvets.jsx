@@ -1,6 +1,14 @@
 import React, { useState } from 'react';
 import { Menu, X, Bell, Calendar, Users, BarChart3, Settings, Tag, CreditCard, ChevronDown, Search, Sun, Moon, Filter, ArrowUp, ArrowDown, Grid, LogOut, HelpCircle } from 'lucide-react';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+} from 'recharts';
 
 const AdminDashboard = () => {
   const [isSidebarOpen, setSidebarOpen] = useState(true);
@@ -30,7 +38,7 @@ const AdminDashboard = () => {
             <div className="h-8 w-8 bg-indigo-500 rounded-lg flex items-center justify-center">
               <Grid className="w-5 h-5 text-white" />
             </div>
-            <span className="text-xl font-bold">eventA</span>
+            <span className="text-xl font-bold">EventPro</span>
           </div>
         </div>
 
@@ -46,14 +54,14 @@ const AdminDashboard = () => {
           </div>
         </div>
 
-        <nav className="mt-2 px-3">
+        <nav className="mt-4 px-3">
           {[
             { icon: BarChart3, label: 'Overview', notifications: 0 },
             { icon: Calendar, label: 'Events', notifications: 12 },
             { icon: Users, label: 'Users', notifications: 3 },
             { icon: Tag, label: 'Categories', notifications: 0 },
             { icon: CreditCard, label: 'Payments', notifications: 5 },
-            
+            { icon: Settings, label: 'Settings', notifications: 0 },
           ].map(({ icon: Icon, label, notifications }) => (
             <div 
               key={label}

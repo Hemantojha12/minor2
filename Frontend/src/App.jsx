@@ -13,6 +13,8 @@ import EducationalEventPage from './Pages/Dashbord/EducationalEventPage';
 import SportsEvents from './Pages/Dashbord/SportsEvents';
 import PoliticalEventsPage from './Pages/Dashbord/PoliticalEvents';
 import UserLandingPage from './Pages/Dashbord/UserLandingPage';
+import ConcertEvents from './Pages/Dashbord/ConcertEvets';
+import HomePage from './Pages/Dashbord/HomePage';
 
 
 
@@ -37,6 +39,10 @@ const App = () => {
           <Route path="/SportsEvents" element={<SportsEvents />} />
           <Route path="/PoliticalEventsPage" element={<PoliticalEventsPage />} />
           <Route path="/UserLandingpage" element={<UserLandingPage />} />
+          <Route path="/ConcertEvents" element={<ConcertEvents />} />
+          <Route path="/HomePage" element={<HomePage />} />
+          
+          
           
         </Routes>
       </Layout>

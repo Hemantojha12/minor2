@@ -18,7 +18,7 @@ import {
   MapPin, 
   Share2 
 } from 'lucide-react';
-
+import { Link } from 'react-router-dom';
 const UserDashboard = () => {
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -144,10 +144,12 @@ const UserDashboard = () => {
 
               {isProfileOpen && (
                 <div className={`absolute right-0 mt-2 w-48 py-2 ${themeClasses.card} rounded-xl shadow-lg`}>
+                    <Link to="/Userprofile">
                   <button className="w-full px-4 py-2 text-left hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center space-x-2">
                     <User className="h-4 w-4" />
-                    <span>Profile</span>
+                    <span> Profile</span>
                   </button>
+                  </Link>
                   <button className="w-full px-4 py-2 text-left hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center space-x-2">
                     <Settings className="h-4 w-4" />
                     <span>Settings</span>
